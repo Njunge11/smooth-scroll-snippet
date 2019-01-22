@@ -112,7 +112,7 @@
       const links = document.querySelectorAll(".link");
       Object.keys(links).map((link, index) => {
         const element = document.querySelector(".link" + (index + 1));
-        const previousState = (element.onclick = () => {
+        element.onclick = () => {
           const active = document.querySelector(".active");
           if (active) {
             active.classList.remove("active");
@@ -121,7 +121,7 @@
           document
             .querySelector(".section" + (index + 1))
             .scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        };
       });
     </script>
   </body>
