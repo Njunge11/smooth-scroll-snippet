@@ -112,23 +112,18 @@
       const links = document.querySelectorAll(".link");
       const sections = [];
       Object.keys(links).map((link, index) => {
-        // const i = parseInt(link) + 1;
-        console.log(index);
         const element = document.querySelector(".link" + (index + 1));
-        sections.push(index);
-        element.onclick = () => {
-          const selectedSection = sections[index];
-          console.log(selectedSection);
-          if (sections.indexOf(selectedSection) > -1) {
-            // element.classList.add("active");
-            console.log("active");
+        sections.push(index + 1);
+        const previousState = (element.onclick = () => {
+          const active = document.querySelector(".active");
+          if (active) {
+            active.classList.remove("active");
           }
-          sections.map(section => {});
-
+          element.classList.add("active");
           document
             .querySelector(".section" + (index + 1))
             .scrollIntoView({ behavior: "smooth", block: "start" });
-        };
+        });
       });
     </script>
   </body>
