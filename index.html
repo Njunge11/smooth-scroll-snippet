@@ -110,10 +110,8 @@
     </div>
     <script>
       const links = document.querySelectorAll(".link");
-      const sections = [];
       Object.keys(links).map((link, index) => {
         const element = document.querySelector(".link" + (index + 1));
-        sections.push(index + 1);
         const previousState = (element.onclick = () => {
           const active = document.querySelector(".active");
           if (active) {
